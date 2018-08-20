@@ -30,6 +30,7 @@ public:
 		lNpcArr.resize(maxNpcCnt);
 		RNpcArr.resize(maxNpcCnt);
 
+
 		for (int obj = 0; obj < maxNpcCnt; obj++)
 		{
 			
@@ -37,7 +38,6 @@ public:
 			lNpcArr[obj].Load(L"ChickenSample.bmp", L"ChickenSampleMask.bmp");
 			//lNpcArr[obj].pos.x *= 1.0f;
 		}
-
 		
 		for (int obj = 0; obj < maxNpcCnt; obj++)
 		{
@@ -60,6 +60,7 @@ public:
 
 		hero.Update();
 	
+
 		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
 			if (!lNpcArr[inpc].dead)
@@ -73,6 +74,14 @@ public:
 			if (!RNpcArr[inpc].dead)
 			{
 				RNpcArr[inpc].Update();
+			}
+		}
+
+		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		{
+			if (Collision::SphereInSphere( lNpcArr[inpc].rtCollision, hero.rtCollision))
+			{
+				lNpcArr[inpc].dead = true;
 			}
 		}
 
