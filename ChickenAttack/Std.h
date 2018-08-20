@@ -6,6 +6,7 @@
 #include <map>
 #include <string>
 #include <list>
+#include <vector>
 
 typedef std::basic_string<char> C_STR;
 typedef std::basic_string<wchar_t> W_STR;

@@ -29,6 +29,7 @@ void Object::Set(float x, float y, DWORD l, DWORD t, DWORD r, DWORD b)
 
 	pos.x = x;
 	pos.y = y;
+
 	posDraw.x = pos.x - (rtDraw.right / 2);
 	posDraw.y = pos.y - (rtDraw.bottom / 2);
 
@@ -195,7 +196,8 @@ Object::Object()
 {
 	posDraw.x = 0;
 	posDraw.y = 0;
-	dir[0] = dir[1] = 1.0f;
+	dir[0] = 1.0f;
+    dir[1] = -1.0f;
 	speed = 100.0f;
 	pColorBitmap = NULL;
 	pMaskBitmap = NULL;

@@ -1,6 +1,7 @@
 #pragma once
 #include "BitmapMgr.h"
 #include "Collision.h"
+#include "GameTimer.h"
 
 #define LR_ROTATION 0x01
 #define TB_ROTATION 0x02
@@ -18,6 +19,9 @@ public:
 
 	RECT rtDraw;
 	RECT rtCollision;
+
+
+	float fdir = 1.0f;
 
 	float dir[2];
 	float speed;

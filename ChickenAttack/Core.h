@@ -1,7 +1,8 @@
 #pragma once
 #include "Window.h"
 #include "Input.h"
-
+#include "GameTimer.h"
+#include "Std.h"
 
 
 
@@ -12,6 +13,8 @@ public:
 	HDC     hOffScreenDC;
 	HBITMAP hOffScreenBitmap;
 	HBRUSH  hbrBack;
+
+	GameTimer timer;
 
 public:
 	bool	GameInit();

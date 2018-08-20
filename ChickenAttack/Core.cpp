@@ -4,6 +4,7 @@ HDC g_hOffScreenDC = NULL;
 
 bool	Core::GameInit()
 {
+	timer.Init();
 	I_Input.Init();
 
 	hScreenDC = GetDC(hWnd);
@@ -23,6 +24,7 @@ bool	Core::GameInit()
 
 bool	Core::GameUpdate()
 {
+	timer.Update();
 	I_Input.Update();
 
 	Update();
@@ -36,7 +38,7 @@ bool	Core::GameRender()
 	GamePreRender();
 	{
 		Render();
-		//m_Timer.Render();
+		timer.Render();
 		I_Input.Render();
 	}
 	GamePostRender();
@@ -66,6 +68,7 @@ bool	Core::GameRelease()
 	Release();
 	//////////////////////////////////////추가 삭제 되는 클래스들 작성부
 	I_Input.Release();
+	timer.Release();
 	/////////////////////////////////////
 
 	DeleteObject(hbrBack);

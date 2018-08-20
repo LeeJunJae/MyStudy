@@ -2,7 +2,9 @@
 #include "Core.h"
 #include "Bitmap.h"
 #include "Object.h"
+#include "NPCObject.h"
 
+const int maxNpcCnt = 10;
 
 class Sample : public Core
 {
@@ -12,6 +14,9 @@ class Sample : public Core
 	///////////////
 	Object hero;
 
+	std::vector<NPCObject> lNpcArr;
+	std::vector<NPCObject> RNpcArr;
+
 public:
 	bool Init()
 	{
@@ -19,8 +24,28 @@ public:
 		posDraw.y = 0;
 		bitmap.Load(L"lastBG.bmp");
 
-		hero.Set(300, 300, 0, 0, 120, 130);
+		hero.Set(500, 500, 0, 0, 120, 130);
 		hero.Load(L"charLink.bmp", L"LinkMask.bmp");
+
+		lNpcArr.resize(maxNpcCnt);
+		RNpcArr.resize(maxNpcCnt);
+
+		for (int obj = 0; obj < maxNpcCnt; obj++)
+		{
+			
+			lNpcArr[obj].Set( 100 , 100 + rand() % 1000, 0, 0, 54, 65);
+			lNpcArr[obj].Load(L"ChickenSample.bmp", L"ChickenSampleMask.bmp");
+			//lNpcArr[obj].pos.x *= 1.0f;
+		}
+
+		
+		for (int obj = 0; obj < maxNpcCnt; obj++)
+		{
+			RNpcArr[obj].Set(1000, 100 + rand() % 1000, 0, 0, 54, 65); //1380
+			RNpcArr[obj].Load(L"ChickenSample.bmp", L"ChickenSampleMask.bmp");
+			RNpcArr[obj].fdir = -1.0f;
+		}
+
 
 		return true;
 	}
@@ -34,22 +59,22 @@ public:
 		}
 
 		hero.Update();
-	/*	if (I_Input.Key('W'))
+	
+		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
-			posDraw.y += -1 * 300.0f;
+			if (!lNpcArr[inpc].dead)
+			{
+				lNpcArr[inpc].Update();
+			}
 		}
-		if (I_Input.Key('S'))
+
+		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
-			posDraw.y += 1 * 300.0f;
+			if (!RNpcArr[inpc].dead)
+			{
+				RNpcArr[inpc].Update();
+			}
 		}
-		if (I_Input.Key('A'))
-		{
-			posDraw.x += -1 * 300.0f;
-		}
-		if (I_Input.Key('D'))
-		{
-			posDraw.x += 1 * 300.0f;
-		}*/
 
 		return true;
 	}
@@ -60,13 +85,44 @@ public:
 
 		hero.Render();
 
+		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		{
+			if (!lNpcArr[inpc].dead)
+			{
+				lNpcArr[inpc].Render();
+			}
+		}
+
+		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		{
+			if (!RNpcArr[inpc].dead)
+			{
+				RNpcArr[inpc].Render();
+			}
+		}
 
 		return true;
 	}
 
 	bool Release()
 	{
+		bitmap.Release();
+		hero.Release();
+		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		{
+			if (!lNpcArr[inpc].dead)
+			{
+				lNpcArr[inpc].Release();
+			}
+		}
 
+		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		{
+			if (!RNpcArr[inpc].dead)
+			{
+				RNpcArr[inpc].Release();
+			}
+		}
 		return true;
 	}
 
