@@ -33,6 +33,12 @@
     <ClCompile Include="Input.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -53,12 +59,24 @@
     <ClInclude Include="Input.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="BGImage.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="Link.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="charLink.bmp">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="LinkMask.bmp">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

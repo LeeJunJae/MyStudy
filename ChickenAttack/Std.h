@@ -18,6 +18,12 @@ extern float g_fSecPerFrame;
 extern HDC g_hOffScreenDC;
 
 
+struct Point
+{
+	float x, y;
+};
+
+
 template<class T> class Singleton
 {
 public:

@@ -31,4 +31,4 @@ protected:
 public:
 	virtual ~BitmapMgr();
 };
-
+#define I_BitmapMgr BitmapMgr::GetInstance()

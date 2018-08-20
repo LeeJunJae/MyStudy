@@ -1,29 +1,39 @@
 //#include "Window.h"
 #include "Core.h"
 #include "Bitmap.h"
+#include "Object.h"
 
-struct Point
-{
-	float x, y;
-};
+
 class Sample : public Core
 {
 	Bitmap  bitmap;
 	Point  posDraw;
 
+	///////////////
+	Object hero;
 
 public:
 	bool Init()
 	{
 		posDraw.x = 0;
 		posDraw.y = 0;
-		bitmap.Load(L"BGImage.bmp");
+		bitmap.Load(L"lastBG.bmp");
+
+		hero.Set(300, 300, 0, 0, 120, 130);
+		hero.Load(L"charLink.bmp", L"LinkMask.bmp");
 
 		return true;
 	}
 
 	bool Update()
 	{
+		if (I_Input.Key('0') == KEY_PUSH)
+		{
+			hero.debugRect = !hero.debugRect;
+			
+		}
+
+		hero.Update();
 	/*	if (I_Input.Key('W'))
 		{
 			posDraw.y += -1 * 300.0f;
@@ -46,7 +56,11 @@ public:
 
 	bool Render()
 	{
-		BitBlt(hOffScreenDC, posDraw.x, posDraw.y, 800, 600, bitmap.hMemDC, 0, 0, SRCCOPY);
+		BitBlt(hOffScreenDC, posDraw.x, posDraw.y, 1280, 960, bitmap.hMemDC, 0, 0, SRCCOPY);
+
+		hero.Render();
+
+
 		return true;
 	}
 
@@ -66,6 +80,6 @@ public:
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevIst, LPSTR lpCmdLine, int nCmdShow)
 {
 	Sample win;
-	win.SetWindow(hInst, L"CHICKENATTACK", 655, 518); //655, 518
+	win.SetWindow(hInst, L"CHICKENATTACK", 1280, 960); //655, 518
 	win.Run();
 }
