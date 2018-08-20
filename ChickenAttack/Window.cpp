@@ -3,7 +3,7 @@
 Window*   g_pWindow	  = 0;
 HWND      g_hWnd      = NULL;
 HINSTANCE g_hInstance = NULL;
-
+RECT	  g_rtClient;
 
 LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 {

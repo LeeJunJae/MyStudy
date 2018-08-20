@@ -149,6 +149,7 @@
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NPCObject.cpp" />
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -158,6 +159,7 @@
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="Input.h" />
+    <ClInclude Include="NPCObject.h" />
     <ClInclude Include="Object.h" />
     <ClInclude Include="Std.h" />
     <ClInclude Include="Window.h" />
