@@ -160,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="BGImage.bmp" />
+    <Image Include="Link.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

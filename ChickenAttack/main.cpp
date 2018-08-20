@@ -18,6 +18,7 @@ public:
 		posDraw.x = 0;
 		posDraw.y = 0;
 		bitmap.Load(L"BGImage.bmp");
+
 		return true;
 	}
 
@@ -65,6 +66,6 @@ public:
 int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevIst, LPSTR lpCmdLine, int nCmdShow)
 {
 	Sample win;
-	win.SetWindow(hInst, L"CHICKENATTACK", 655, 518);
+	win.SetWindow(hInst, L"CHICKENATTACK", 655, 518); //655, 518
 	win.Run();
 }

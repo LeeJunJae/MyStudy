@@ -107,6 +107,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChickenAttack", "ChickenAtt
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ChickenAttack", "ChickenAttack\ChickenAttack.vcxproj", "{566D2886-8C89-4409-A423-338E9677F463}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "A.I", "A.I", "{C0D056AC-854F-4D69-84B8-78402083F0BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "STL", "STL", "{EE4F5431-CDA3-45D4-830A-2AF4C1CD413B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
