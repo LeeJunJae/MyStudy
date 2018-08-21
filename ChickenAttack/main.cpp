@@ -14,7 +14,7 @@ class Sample : public Core
 	///////////////
 	Object hero;
 
-	std::vector<NPCObject> lNpcArr;
+	std::vector<NPCObject> LNpcArr;
 	std::vector<NPCObject> RNpcArr;
 
 public:
@@ -27,13 +27,13 @@ public:
 		hero.Set(500, 500, 0, 0, 120, 130);
 		hero.Load(L"charLink.bmp", L"LinkMask.bmp");
 
-		lNpcArr.resize(maxNpcCnt);
+		LNpcArr.resize(maxNpcCnt);
 		RNpcArr.resize(maxNpcCnt);
 		for (int obj = 0; obj < maxNpcCnt; obj++)
 		{
 			
-			lNpcArr[obj].Set( 100 , 100 + rand() % 1000, 0, 0, 80, 96);
-			lNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
+			LNpcArr[obj].Set( 100 , 100 + rand() % 1000, 0, 0, 80, 96);
+			LNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
 			//lNpcArr[obj].pos.x *= 1.0f;
 		}
 		
@@ -58,49 +58,48 @@ public:
 		hero.Update();
 	
 
-		lNpcArr.resize(maxNpcCnt);
+		LNpcArr.resize(maxNpcCnt);
 		RNpcArr.resize(maxNpcCnt);
 
-		//if (hero.dead == false)
-		//{
-		//	
-
-		//	for (int obj = 0; obj < maxNpcCnt; obj++)
-		//	{
-		//		lNpcArr[obj].Set(100, 100 + rand() % 1000, 0, 0, 80, 96);
-		//		lNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
-		//		lNpcArr[obj].pos.x *= 1.0f;
-		//	}
-
-		//	for (int obj = 0; obj < maxNpcCnt; obj++)
-		//	{
-		//		RNpcArr[obj].Set(1000, 100 + rand() % 1000, 0, 0, 80, 96); //1380
-		//		RNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
-		//		RNpcArr[obj].fdir = -1.0f;
-		//	}
-
-		//	
-		//}
-	
-
-		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		int time = 1;
+		if ((g_fSecPerFrame / 10) == time)
 		{
-			if (!lNpcArr[inpc].dead)
+			if (hero.dead == false)
 			{
-				lNpcArr[inpc].Update();
-
-				if (lNpcArr[inpc].pos.x > 1480)
+				for (int obj = 0; obj < maxNpcCnt; obj++)
 				{
-					for (int inpc = 0; inpc < maxNpcCnt; inpc++)
-					{
-						if (!lNpcArr[inpc].dead)
-						{
-							lNpcArr[inpc].Release();
-						}
-					}
+					LNpcArr[obj].Set(100, 100 + rand() % 1000, 0, 0, 80, 96);
+					LNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
+					LNpcArr[obj].pos.x *= 1.0f;
+				}
+
+				for (int obj = 0; obj < maxNpcCnt; obj++)
+				{
+					RNpcArr[obj].Set(1000, 100 + rand() % 1000, 0, 0, 80, 96); //1380
+					RNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
+					RNpcArr[obj].fdir = -1.0f;
 				}
 			}
 		}
+
+		//for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		//{
+		//	if (!LNpcArr[inpc].dead)
+		//	{
+		//		LNpcArr[inpc].Update();
+
+		//		if (LNpcArr[inpc].pos.x > 1480)
+		//		{
+		//			for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+		//			{
+		//				if (!LNpcArr[inpc].dead)
+		//				{
+		//					LNpcArr[inpc].Release();
+		//				}
+		//			}
+		//		}
+		//	}
+		//}
 
 		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
@@ -112,11 +111,24 @@ public:
 
 		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
-			if (Collision::SphereInSphere( lNpcArr[inpc].rtCollision, hero.rtCollision))
+			if (Collision::SphereInSphere( LNpcArr[inpc].rtCollision, hero.rtCollision))
 			{
-				lNpcArr[inpc].dead = true;
+				LNpcArr[inpc].dead = true;
 			}
 		}
+
+
+	
+		RNpcArr.clear();
+		LNpcArr.clear();
+
+
+
+		time++;
+
+
+
+
 
 		return true;
 	}
@@ -129,9 +141,9 @@ public:
 
 		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
-			if (!lNpcArr[inpc].dead)
+			if (!LNpcArr[inpc].dead)
 			{
-				lNpcArr[inpc].Render();
+				LNpcArr[inpc].Render();
 			}
 		}
 
@@ -152,9 +164,9 @@ public:
 		hero.Release();
 		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
-			if (!lNpcArr[inpc].dead)
+			if (!LNpcArr[inpc].dead)
 			{
-				lNpcArr[inpc].Release();
+				LNpcArr[inpc].Release();
 			}
 		}
 

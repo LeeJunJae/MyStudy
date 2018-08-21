@@ -13,69 +13,102 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\BasicStructure">
+      <UniqueIdentifier>{0c737a45-9254-47b7-b1c5-7f6b78e94ed7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\BasicStructure">
+      <UniqueIdentifier>{ad24bbdf-64dd-45f3-b37d-790f80701f1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Object">
+      <UniqueIdentifier>{e76a2ee8-d60b-4f11-924d-27d72fdbd6dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Image">
+      <UniqueIdentifier>{9d2b2fc1-14bf-44cf-b002-9996713f13da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Scene">
+      <UniqueIdentifier>{8345b0e1-df89-45d1-bdb9-bf0673e2ff0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Image">
+      <UniqueIdentifier>{a4c95371-dbf6-47da-874f-aa0c1af521e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Object">
+      <UniqueIdentifier>{ac7b82ea-2322-4aa6-93b6-c978ab834add}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Core.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Bitmap.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="BitmapMgr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Input.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Object.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Collision.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="NPCObject.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\BasicStructure</Filter>
     </ClCompile>
     <ClCompile Include="GameTimer.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\BasicStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Input.cpp">
+      <Filter>소스 파일\BasicStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>소스 파일\BasicStructure</Filter>
+    </ClCompile>
+    <ClCompile Include="NPCObject.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>소스 파일\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Bitmap.cpp">
+      <Filter>소스 파일\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapMgr.cpp">
+      <Filter>소스 파일\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>소스 파일\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="SpriteMgr.cpp">
+      <Filter>소스 파일\Image</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>소스 파일\Scene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Core.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\BasicStructure</Filter>
     </ClInclude>
     <ClInclude Include="Std.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Bitmap.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="BitmapMgr.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\BasicStructure</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\BasicStructure</Filter>
     </ClInclude>
-    <ClInclude Include="Object.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Collision.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="NPCObject.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="Core.h">
+      <Filter>헤더 파일\BasicStructure</Filter>
     </ClInclude>
     <ClInclude Include="GameTimer.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\BasicStructure</Filter>
+    </ClInclude>
+    <ClInclude Include="Bitmap.h">
+      <Filter>헤더 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapMgr.h">
+      <Filter>헤더 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>헤더 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteMgr.h">
+      <Filter>헤더 파일\Image</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="NPCObject.h">
+      <Filter>헤더 파일\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>헤더 파일\Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

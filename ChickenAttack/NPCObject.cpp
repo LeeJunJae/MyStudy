@@ -4,9 +4,7 @@
 
 bool NPCObject::Update()
 {
-	
-
-	int iHalfX = rtDraw.right / 2;
+	int iHalfX = rtDraw.right  / 2;
 	int iHalfY = rtDraw.bottom / 2;
 
 	/*if ((pos.x + iHalfX) > g_rtClient.right)
