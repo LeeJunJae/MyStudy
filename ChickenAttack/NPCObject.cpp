@@ -43,6 +43,10 @@ bool NPCObject::Update()
 	rtCollision.right = rtCollision.left + rtDraw.right;
 	rtCollision.bottom = rtCollision.top + rtDraw.bottom;
 
+	if (pos.x > 1480)
+	{
+		this->~NPCObject();
+	}
 
 	return true;
 }
@@ -55,4 +59,5 @@ NPCObject::NPCObject()
 
 NPCObject::~NPCObject()
 {
+	
 }

@@ -188,6 +188,8 @@ bool Object::Render()
 }
 bool Object::Release()
 {
+	
+
 	return true;
 }
 

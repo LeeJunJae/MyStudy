@@ -29,20 +29,18 @@ public:
 
 		lNpcArr.resize(maxNpcCnt);
 		RNpcArr.resize(maxNpcCnt);
-
-
 		for (int obj = 0; obj < maxNpcCnt; obj++)
 		{
 			
-			lNpcArr[obj].Set( 100 , 100 + rand() % 1000, 0, 0, 54, 65);
-			lNpcArr[obj].Load(L"ChickenSample.bmp", L"ChickenSampleMask.bmp");
+			lNpcArr[obj].Set( 100 , 100 + rand() % 1000, 0, 0, 80, 96);
+			lNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
 			//lNpcArr[obj].pos.x *= 1.0f;
 		}
 		
 		for (int obj = 0; obj < maxNpcCnt; obj++)
 		{
-			RNpcArr[obj].Set(1000, 100 + rand() % 1000, 0, 0, 54, 65); //1380
-			RNpcArr[obj].Load(L"ChickenSample.bmp", L"ChickenSampleMask.bmp");
+			RNpcArr[obj].Set(1000, 100 + rand() % 1000, 0, 0, 80, 96); //1380
+			RNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
 			RNpcArr[obj].fdir = -1.0f;
 		}
 
@@ -54,11 +52,35 @@ public:
 	{
 		if (I_Input.Key('0') == KEY_PUSH)
 		{
-			hero.debugRect = !hero.debugRect;
-			
+			hero.debugRect = !hero.debugRect;			
 		}
 
 		hero.Update();
+	
+
+		lNpcArr.resize(maxNpcCnt);
+		RNpcArr.resize(maxNpcCnt);
+
+		//if (hero.dead == false)
+		//{
+		//	
+
+		//	for (int obj = 0; obj < maxNpcCnt; obj++)
+		//	{
+		//		lNpcArr[obj].Set(100, 100 + rand() % 1000, 0, 0, 80, 96);
+		//		lNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
+		//		lNpcArr[obj].pos.x *= 1.0f;
+		//	}
+
+		//	for (int obj = 0; obj < maxNpcCnt; obj++)
+		//	{
+		//		RNpcArr[obj].Set(1000, 100 + rand() % 1000, 0, 0, 80, 96); //1380
+		//		RNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
+		//		RNpcArr[obj].fdir = -1.0f;
+		//	}
+
+		//	
+		//}
 	
 
 		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
@@ -66,6 +88,17 @@ public:
 			if (!lNpcArr[inpc].dead)
 			{
 				lNpcArr[inpc].Update();
+
+				if (lNpcArr[inpc].pos.x > 1480)
+				{
+					for (int inpc = 0; inpc < maxNpcCnt; inpc++)
+					{
+						if (!lNpcArr[inpc].dead)
+						{
+							lNpcArr[inpc].Release();
+						}
+					}
+				}
 			}
 		}
 
