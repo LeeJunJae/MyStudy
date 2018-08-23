@@ -9,13 +9,14 @@ const int maxNpcCnt = 10;
 class Sample : public Core
 {
 	Bitmap  bitmap;
-	Point  posDraw;
+	Point   posDraw;
 
 	///////////////
 	Object hero;
 
 	std::vector<NPCObject> LNpcArr;
 	std::vector<NPCObject> RNpcArr;
+	
 
 public:
 	bool Init()
@@ -57,49 +58,25 @@ public:
 
 		hero.Update();
 	
+		////생성/////
 
-		LNpcArr.resize(maxNpcCnt);
-		RNpcArr.resize(maxNpcCnt);
+		
 
-		int time = 1;
-		if ((g_fSecPerFrame / 10) == time)
-		{
-			if (hero.dead == false)
-			{
-				for (int obj = 0; obj < maxNpcCnt; obj++)
-				{
-					LNpcArr[obj].Set(100, 100 + rand() % 1000, 0, 0, 80, 96);
-					LNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
-					LNpcArr[obj].pos.x *= 1.0f;
-				}
+		std::vector<NPCObject> npcList;
+		
+		
+		NPCObject npc;
+		npcList.push_back(npc);
 
-				for (int obj = 0; obj < maxNpcCnt; obj++)
-				{
-					RNpcArr[obj].Set(1000, 100 + rand() % 1000, 0, 0, 80, 96); //1380
-					RNpcArr[obj].Load(L"80ChickenSample110.bmp", L"80ChickenSampleMask110.bmp");
-					RNpcArr[obj].fdir = -1.0f;
-				}
-			}
-		}
 
-		//for (int inpc = 0; inpc < maxNpcCnt; inpc++)
-		//{
-		//	if (!LNpcArr[inpc].dead)
-		//	{
-		//		LNpcArr[inpc].Update();
 
-		//		if (LNpcArr[inpc].pos.x > 1480)
-		//		{
-		//			for (int inpc = 0; inpc < maxNpcCnt; inpc++)
-		//			{
-		//				if (!LNpcArr[inpc].dead)
-		//				{
-		//					LNpcArr[inpc].Release();
-		//				}
-		//			}
-		//		}
-		//	}
-		//}
+		//////계산//////
+
+
+
+	
+
+	
 
 		for (int inpc = 0; inpc < maxNpcCnt; inpc++)
 		{
@@ -124,8 +101,7 @@ public:
 
 
 
-		time++;
-
+		
 
 
 

@@ -146,6 +146,7 @@
   <ItemGroup>
     <ClCompile Include="Bitmap.cpp" />
     <ClCompile Include="BitmapMgr.cpp" />
+    <ClCompile Include="CockMgr.cpp" />
     <ClCompile Include="Collision.cpp" />
     <ClCompile Include="Core.cpp" />
     <ClCompile Include="GameTimer.cpp" />
@@ -160,6 +161,7 @@
   <ItemGroup>
     <ClInclude Include="Bitmap.h" />
     <ClInclude Include="BitmapMgr.h" />
+    <ClInclude Include="CockMgr.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="Core.h" />
     <ClInclude Include="GameTimer.h" />
