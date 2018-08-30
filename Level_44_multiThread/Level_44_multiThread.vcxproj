@@ -143,6 +143,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="01.cpp" />
+    <ClCompile Include="02.cpp" />
+    <ClCompile Include="03.cpp" />
+    <ClCompile Include="04.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

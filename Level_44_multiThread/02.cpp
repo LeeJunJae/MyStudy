@@ -2,13 +2,22 @@
 //#include <process.h>
 //#include <Windows.h>
 //
+//
+//int flag = 0;
 //unsigned int _stdcall THREAD(void* arg)
 //{
-//	while (true)
+//	int num = 1;
+//	int sum = 0;
+//	while (num > 100000)
 //	{
 //		
-//		printf("@");
+//		sum += num;
+//		num++;
 //	}
+//
+//
+//	printf("쓰레드 종료");
+//	return 0;
 //}
 //
 //
@@ -17,9 +26,12 @@
 //	HANDLE hThread;
 //	hThread = (HANDLE)_beginthreadex(0, 0, THREAD, 0, 0, 0);
 //
-//	while (true)
+//	int time = 0;
+//	while (time < 5)
 //	{
-//		printf("0");
+//		printf("#");
+//		Sleep(100);
+//		time++;
 //	}
 //
 //	//WaitForSingleObject(hThread, INFINITE);
