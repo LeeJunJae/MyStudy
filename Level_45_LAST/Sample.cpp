@@ -69,6 +69,7 @@ void DFS(int level, int dy, int dx)
 	
 
 	buffer[dy][dx] = 1;
+	history[dy][dx] = 1;
 	cnt++;
 	PrintCross(dy, dx);
 
@@ -76,6 +77,7 @@ void DFS(int level, int dy, int dx)
 	{
 		//버퍼를 초기화
 
+		//history[dy][dx] = 0;
 		return;
 	}
 
@@ -86,10 +88,15 @@ void DFS(int level, int dy, int dx)
 			if (buffer[y][x] == 0)
 			{
 				DFS(level + 1,  y,  x);
+				//history[dy][dx] = 0;
+
 			}
+			//history[dy][dx] = 0;
+
 		}
 	}
 
+	
 }
 
 
