@@ -1,3 +1,27 @@
+#include <vector>
+
+using namespace std;
+
+
+int main()
+{
+	int answer = 0;
+	int N = 7;
+	
+	bool check[10] = { false, };
+	for (int i = 2; i <= N; i++)
+	{
+		if (!check[i])
+			answer += i;
+
+		for (int j = i; j <= N; j += i)
+		{
+			check[j] = true;
+		}
+	}
+
+	return 0;
+}
 //#include <stdio.h>
 //
 //int map[4][4] =
