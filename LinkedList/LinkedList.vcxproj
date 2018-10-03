@@ -23,7 +23,7 @@
     <ProjectGuid>{3C4AC87F-438F-4825-A056-7268AB95F169}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>LinkedList</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>LinkedListSTDMgr</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />

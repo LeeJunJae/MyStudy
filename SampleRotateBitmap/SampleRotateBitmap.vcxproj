@@ -23,7 +23,7 @@
     <ProjectGuid>{62BA6C85-AC7F-4B9B-9BBA-D51D86C0C3A2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>SampleRotateBitmap</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

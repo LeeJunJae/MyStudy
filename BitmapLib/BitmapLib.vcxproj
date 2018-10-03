@@ -23,7 +23,7 @@
     <ProjectGuid>{3FDF9094-D3CC-4FB7-8760-9D197CFB81AA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>BitmapLib</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>SampleLib</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
