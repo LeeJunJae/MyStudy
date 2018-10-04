@@ -4,7 +4,7 @@
 
 enum SELECT_MENU
 {
-	MAKE = 1,
+	MAKE     = 1,
 	DEPOSIT,
 	WITHDRAW,
 	INQUIRE,
@@ -28,40 +28,37 @@ int main()
 
 		switch (choice)
 		{
-		case MAKE:
-		{
-			accHandler.MakeAccount();
-		}
-		break;
+			case MAKE:
+			{
+				accHandler.MakeAccount();
+			}
+			break;
 
-		case DEPOSIT:
-		{
-			accHandler.DepositMoney();
-		}
-		break;
+			case DEPOSIT:
+			{
+				accHandler.DepositMoney();
+			}
+			break;
 
-		case WITHDRAW:
-		{
-			accHandler.WithdrawMoney();
-		}
-		break;
+			case WITHDRAW:
+			{
+				accHandler.WithdrawMoney();
+			}
+			break;
 
-		case INQUIRE:
-		{
-			accHandler.ShowAllAccInfo();
-		}
-		break;
+			case INQUIRE:
+			{
+				accHandler.ShowAllAccInfo();
+			}
+			break;
 
-		case EXIT:
-		{			
-			return 0;
-		}
-		break;
-		}
-
+			case EXIT:
+			{			
+				return 0;
+			}
+			break;
+			}
 	}
-
-
 
 	return 0;
 }

@@ -16,6 +16,9 @@ Account::Account(const Account& pAcc)
 	strcpy(this->cusName, pAcc.cusName);
 }
 
+Account::Account()
+{};
+
 int Account::GetAccID() const
 {
 	return accID;

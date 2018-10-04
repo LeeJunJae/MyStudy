@@ -34,7 +34,7 @@ void AccountHandler::MakeAccount(void)
 
 	cout << "[계좌 개설]" << endl;
 	cout << "계좌ID : ";  cin >> id;
-	cout << "이름 : ";  cin >> name;
+	cout << "이름 : ";    cin >> name;
 	cout << "입금액 : ";  cin >> balance;
 	cout << endl;
 
