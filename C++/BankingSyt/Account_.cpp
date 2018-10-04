@@ -1,8 +1,6 @@
 #include "Account_.h"
 
 
-
-
 Account::Account(int ID, int money, char* name) : accID(ID), balance(money)
 {
 	cusName = new char[strlen(name) + 1];
